@@ -37,7 +37,14 @@ hr {
     padding-right: 15px;
     padding-left: 15px;
 }
-
+@media (min-width: 47rem) {
+    .padding-all {
+        padding-top: 178px;
+        padding-bottom: 178px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
 /* Chart */
 .chart {
 

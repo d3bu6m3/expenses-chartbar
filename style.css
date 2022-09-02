@@ -1,0 +1,167 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+html {
+    box-sizing: inherit;
+}
+body {
+    background-color: var(--cream);
+    margin: 0;
+    padding: 0;
+    color: var(--mbrown);
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;
+}
+p {
+    margin-top: 0;
+}
+hr {
+    color: var(--cream);
+}
+:root {
+    --sred: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --dbrown: hsl(25, 47%, 15%);
+    --mbrown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --vporange: hsl(33, 100%, 98%);
+}
+/* Class */
+.container {
+    max-width: 465px;
+    margin: 0 auto;
+}
+.padding-all {
+    padding-top: 66px;
+    padding-bottom: 66px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Chart */
+.chart {
+
+}
+    .chart-wrapper {
+
+    }
+    .chart-header {
+        background-color: var(--sred);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 25px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 25px;
+        margin-bottom: 20px;
+    }
+    .chart-header .header-balance {
+        color: var(--vporange);
+    }
+        .header-balance .balance-title {
+            margin-bottom: 10px;
+        }
+        .header-balance .balance-amount {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        @media (min-width: 47rem) {
+            .header-balance .balance-amount {
+                font-size: 32px;
+            }
+        }
+    .chart-body {
+        background-color: var(--vporange);
+        border-radius: 10px;
+        padding-top: 25px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 25px;
+    }
+        .chart-body h3 {
+            color: var(--dbrown);
+        }
+        @media (min-width: 47rem) {
+            .chart-body h3 {
+                font-size: 25px;
+            }
+        }
+        .chart-body .c-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            position: relative;
+        }
+        .c-content .day {
+            font-size: 14px;
+            position: relative;
+            width: 37px;
+            text-align: center;
+        }
+        .c-content .bar-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            height: 175px;
+        }
+            .bar-container .bars {
+                background-color: var(--sred);
+                border-radius: 5px;
+                width: 100%;
+                position: relative;
+            }
+            .bar-container .bars:hover {
+                cursor: pointer;
+                background-color: var(--cyan);
+            }
+            .bar-container .bars:hover::after {
+                opacity: 1;
+            }
+            .bar-container .bars::after {
+                content: attr(data-total);
+                width: 180%;
+                height: 30px;
+                position: absolute;
+                top: -35px;
+                left: -10px;
+                padding: 5px;
+                display: block;
+                opacity: 0;
+                transition: all 200ms ease-in-out;
+                cursor: pointer;
+                background-color: var(--dbrown);
+                border-radius: 5px;
+                color: var(--vporange);
+            }
+            .bar-container .day {
+
+            }
+    .c-footer {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .c-footer p {
+        margin: 0;
+    }
+        .c-footer .month-current #cur-month-amount{
+            font-size: 25px;
+        }
+        @media (min-width: 47rem) {
+            .c-footer .month-current #cur-month-amount{
+                font-size: 32px;
+            }
+        }
+        .c-footer .month-previous{
+            text-align: right;
+            margin-top: 20px;
+        }
+        .c-footer .amount {
+            color: var(--dbrown);
+            font-weight: 700;
+        }
+        
